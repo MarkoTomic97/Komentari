@@ -26,7 +26,7 @@ function App() {
     <>  
         <div className="container">
           <div className="top-container">
-            <h2 className="issue-name">*Issue Name*</h2>
+            <h2 className="issue-name">*Issue Name* #issueId</h2>
           </div>
           <div className="main-container">
             {
@@ -53,6 +53,7 @@ function App() {
                   value={comment}
                   onChange={onChangeHandler}
                   onInput={checkInput}
+                  placeholder="Add your comment here..."
                   className="input-box"
                   id="textInput"
                 />
