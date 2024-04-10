@@ -83,6 +83,12 @@ body{
   background-color: #DDF4FF;
 }
 
+.del{
+  cursor: pointer;
+  font-size: x-large;
+
+}
+
 .text-container {
   padding: 5px;
   height: 75px;

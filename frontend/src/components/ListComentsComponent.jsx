@@ -68,7 +68,7 @@ return (
                     <div className="user-info-container">
                         <h5>{comment.author} commented:</h5>
                         <div className='options'>
-                          <button className='del' id={comment.id} onClick={deleteComment}>Del</button>
+                          <button className='del' id={comment.id} onClick={deleteComment}>...</button>
                           
                         </div>
                     </div>
