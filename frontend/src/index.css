@@ -64,6 +64,9 @@ body{
 }
 
 .user-info-container{
+  display: flex;
+  flex-direction: row;
+  
   height: 30px;
   background-color: #DDF4FF;
   border-top-right-radius: 5px;
@@ -72,6 +75,11 @@ body{
 .user-info-container h5{
   margin-left: 10px;
   margin-top: 8px;
+  background-color: #DDF4FF;
+}
+
+.options{
+  margin-left: auto;
   background-color: #DDF4FF;
 }
 

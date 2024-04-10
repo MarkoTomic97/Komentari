@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { createComment, listComments } from '../services/CommentService';
+import { createComment, listComments, removeComment } from '../services/CommentService';
 
 
 const ListComentsComponent = () => {
@@ -33,11 +33,12 @@ const ListComentsComponent = () => {
                       });
       window.location.reload(false);
     }
-    /*
-    const onClickHandler = () => {
-      setComments((comments) => [...comments, comment]);
-    };
-    */
+    
+    function deleteComment(e){
+      removeComment(e.target.id);
+      window.location.reload(false);
+    }
+    
     const onChangeHandler = (e) => {
       setContent(e.target.value);
     };
@@ -59,6 +60,9 @@ return (
                   <div className="text-and-info-container">
                     <div className="user-info-container">
                         <h5>{comment.author} commented:</h5>
+                        <div className='options'>
+                          <button id={comment.id} onClick={deleteComment}>Del</button>
+                        </div>
                     </div>
                     <div className="text-container">{comment.content}</div>
                   </div>

@@ -9,3 +9,7 @@ export const listComments = () => {
 export const createComment = (comment) => {
     return axios.post(COMMENT_REST_API_BASE_URL, comment);
 }
+
+export const removeComment = (commentId) => {
+    return axios.delete(COMMENT_REST_API_BASE_URL+'/'+commentId);
+}
