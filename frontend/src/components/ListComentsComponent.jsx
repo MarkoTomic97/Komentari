@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { createComment, listComments, removeComment } from '../services/CommentService';
+import { createComment, listComments, removeComment, updateComment } from '../services/CommentService';
 
 
 const ListComentsComponent = () => {
@@ -43,6 +43,13 @@ const ListComentsComponent = () => {
       setContent(e.target.value);
     };
     
+    /*
+    function editComment(e){
+      let id = e.target.id;
+      updateComment(id, comm)
+    }
+    <button className='edit' id={comment.id} onClick={editComment}>Edit</button>
+    */
     
 
 return (
@@ -61,7 +68,8 @@ return (
                     <div className="user-info-container">
                         <h5>{comment.author} commented:</h5>
                         <div className='options'>
-                          <button id={comment.id} onClick={deleteComment}>Del</button>
+                          <button className='del' id={comment.id} onClick={deleteComment}>Del</button>
+                          
                         </div>
                     </div>
                     <div className="text-container">{comment.content}</div>

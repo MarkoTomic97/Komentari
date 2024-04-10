@@ -13,3 +13,7 @@ export const createComment = (comment) => {
 export const removeComment = (commentId) => {
     return axios.delete(COMMENT_REST_API_BASE_URL+'/'+commentId);
 }
+
+export const updateComment = (commentId, comment) => {
+    return axios.put(COMMENT_REST_API_BASE_URL+'/'+commentId, comment);
+}
