@@ -83,12 +83,11 @@ body{
   background-color: #DDF4FF;
 }
 
-.del{
+.del,
+.rply{
   cursor: pointer;
-  font-size: x-large;
-
+  border-style: ridge;
 }
-
 .text-container {
   padding: 5px;
   height: 75px;
@@ -107,8 +106,14 @@ body{
 }
 
 .comment-outerbox{
+  border-top: 1px solid;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
+}
+
+#user-profile-pic{
+  margin-top: 5px;
 }
 
 .comment-tabs{
@@ -141,10 +146,6 @@ body{
   cursor: pointer;
 }
 
-.comment-outerbox{
-  border-top: 1px solid;
-}
-
 .add-comment{
   height: 30px;
 }
@@ -152,5 +153,3 @@ body{
 #submitButton:disabled{
   opacity: 30%;
 }
-
-

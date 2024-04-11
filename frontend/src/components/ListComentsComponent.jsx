@@ -43,14 +43,11 @@ const ListComentsComponent = () => {
       setContent(e.target.value);
     };
     
-    /*
-    function editComment(e){
-      let id = e.target.id;
-      updateComment(id, comm)
+    function replyComment(e){
+      let originalComment = e.target.value;
+      const textarea = document.getElementById('textInput');
+      textarea.value += (" > " + originalComment + "\r");
     }
-    <button className='edit' id={comment.id} onClick={editComment}>Edit</button>
-    */
-    
 
 return (
     <>
@@ -68,8 +65,11 @@ return (
                     <div className="user-info-container">
                         <h5>{comment.author} commented:</h5>
                         <div className='options'>
-                          <button className='del' id={comment.id} onClick={deleteComment}>...</button>
-                          
+                          <button className='del' id={comment.id} onClick={deleteComment}>Delete</button>
+                          <button className='rply' 
+                                  id={comment.id} 
+                                  value = {comment.content} 
+                                  onClick={replyComment}>Reply</button>
                         </div>
                     </div>
                     <div className="text-container">{comment.content}</div>
