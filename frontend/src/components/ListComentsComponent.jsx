@@ -49,6 +49,12 @@ const ListComentsComponent = () => {
       textarea.value += (" > " + originalComment + "\r");
     }
 
+
+    function nl2br (str) {
+    
+      return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br ' + '/>$2');
+    }
+
 return (
     <>
        <div className="container">
@@ -72,7 +78,7 @@ return (
                                   onClick={replyComment}>Reply</button>
                         </div>
                     </div>
-                    <div className="text-container">{comment.content}</div>
+                    <div className="text-container" dangerouslySetInnerHTML={{__html: nl2br(comment.content)}}></div>
                   </div>
                 </div>
               )
